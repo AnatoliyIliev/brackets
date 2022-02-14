@@ -2,9 +2,13 @@
 
 function check(str, bracketsConfig) {
   // const arr = str.split('');
-  console.log(str);
-  const brackets = bracketsConfig.map(br => br[0] + br[1]).filter();
+  // console.log(str);
+  const brackets = bracketsConfig
+    .map(br => br[0] + br[1])
+    .filter(pair => str.includes(pair));
+
   console.log(brackets);
+  return brackets.length ? true : false;
 }
 
 const config1 = [['(', ')']];
@@ -36,9 +40,9 @@ const config7 = [
   ['|', '|'],
 ];
 
-// console.log(check('((()))()', config1)) //, true);
-// console.log(check('())(', config1)) //, false);
-console.log(check('[(])', config2)); //, false);
+// console.log(check('((()))()', config1)); //, true);
+console.log(check('())(', config1)); //, false);
+// console.log(check('[(])', config2)); //, false);
 // console.log(check('[]][[]', config3)) //, false);
 // console.log(check('||', config4)) //, true);
 // console.log(check('|(|)', config5)) //, false);
