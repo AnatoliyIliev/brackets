@@ -3,30 +3,56 @@
 function check(str, bracketsConfig) {
   const arr = str.split('');
   // console.log(arr);
-
   const brackets = bracketsConfig.map(br => br[0] + br[1]);
-  // .filter(pair => str.includes(pair));
+  let i = 0;
+  compare(arr, brackets, i);
 
-  // const check = arr.map((a, idx, arr) => {});
+  // function compare(arr, brackets, i) {
+  //   console.log(arr);
+  //   console.log(arr[i] + arr[i + 1]);
+  //   let joinBracket = brackets.includes(arr[i] + arr[i + 1]);
+  //   console.log(joinBracket);
 
-  for (let i = 0; i <= arr.length; i += 1) {
-    console.log(arr);
-    console.log(arr[i] + arr[i + 1]);
-    let check = brackets.includes(arr[i] + arr[i + 1]);
-    console.log(check);
-    if (check) {
-      arr.splice(arr[i], 2);
-      // console.log(arr);
-    }
-    // console.log(check);
-  }
+  //   if (joinBracket) {
+  //     arr.splice(arr[i], 2);
+  //     compare(arr, brackets, i);
+  //   } else {
+  //     i += 1;
+  //     compare(arr, brackets, i);
+  //   }
+  //   // console.log(check);
+  // }
 
-  // console.log(check);
-  console.log(arr);
-  // console.log(brackets);
+  // for (let i = 0; i < arr.length; i += 1) {
+  //   console.log(arr);
+  //   console.log(arr[i] + arr[i + 1]);
+  //   let joinBracket = brackets.includes(arr[i] + arr[i + 1]);
+  //   console.log(joinBracket);
+  //   if (joinBracket) {
+  //     arr.splice(arr[i], 2);
+  //     // check(arr);
+  //     // console.log(arr);
+  //   }
+  //   // console.log(check);
+  // }
 
   // return brackets.length ? true : false;
 }
+
+// function compare(arr, brackets) {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     console.log(arr);
+//     console.log(arr[i] + arr[i + 1]);
+//     let joinBracket = brackets.includes(arr[i] + arr[i + 1]);
+//     console.log(joinBracket);
+//     if (joinBracket) {
+//       arr.splice(arr[i], 2);
+//       compare(arr);
+//       // console.log(arr);
+//     }
+//     // console.log(check);
+//   }
+// }
 
 const config1 = [['(', ')']];
 const config2 = [
