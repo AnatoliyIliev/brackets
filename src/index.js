@@ -1,14 +1,31 @@
 // module.exports =
-
+// console.log(check('[]][[]', config3)); //, false);
 function check(str, bracketsConfig) {
-  // const arr = str.split('');
-  // console.log(str);
-  const brackets = bracketsConfig
-    .map(br => br[0] + br[1])
-    .filter(pair => str.includes(pair));
+  const arr = str.split('');
+  // console.log(arr);
 
-  console.log(brackets);
-  return brackets.length ? true : false;
+  const brackets = bracketsConfig.map(br => br[0] + br[1]);
+  // .filter(pair => str.includes(pair));
+
+  // const check = arr.map((a, idx, arr) => {});
+
+  for (let i = 0; i <= arr.length; i += 1) {
+    console.log(arr);
+    console.log(arr[i] + arr[i + 1]);
+    let check = brackets.includes(arr[i] + arr[i + 1]);
+    console.log(check);
+    if (check) {
+      arr.splice(arr[i], 2);
+      // console.log(arr);
+    }
+    // console.log(check);
+  }
+
+  // console.log(check);
+  console.log(arr);
+  // console.log(brackets);
+
+  // return brackets.length ? true : false;
 }
 
 const config1 = [['(', ')']];
@@ -41,12 +58,12 @@ const config7 = [
 ];
 
 // console.log(check('((()))()', config1)); //, true);
-console.log(check('())(', config1)); //, false);
+// console.log(check('())(', config1)); //, false);
 // console.log(check('[(])', config2)); //, false);
-// console.log(check('[]][[]', config3)) //, false);
-// console.log(check('||', config4)) //, true);
-// console.log(check('|(|)', config5)) //, false);
-// console.log(check('|()|(||)||', config5)) //, true);
+// console.log(check('[]][[]', config3)); //, false);
+// console.log(check('||', config4)); //, true);
+// console.log(check('|(|)', config5)); //, false);
+console.log(check('|()|(||)||', config5)); //, true);
 // console.log(check('111115611111111222288888822225577877778775555666677777777776622222', config6))
 // //, true);
 // console.log(check('5555512575557777777555566667888888667661133833448441111222233333444442266666', config6))
